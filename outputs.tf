@@ -1,3 +1,7 @@
+output "search_shared_private_link_services_id" {
+  description = "Map of id values across all search_shared_private_link_services, keyed the same as var.search_shared_private_link_services"
+  value       = { for k, v in azurerm_search_shared_private_link_service.search_shared_private_link_services : k => v.id }
+}
 output "search_shared_private_link_services_name" {
   description = "Map of name values across all search_shared_private_link_services, keyed the same as var.search_shared_private_link_services"
   value       = { for k, v in azurerm_search_shared_private_link_service.search_shared_private_link_services : k => v.name }
